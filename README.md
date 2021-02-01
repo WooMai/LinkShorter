@@ -1,6 +1,7 @@
 # Link Shorter
 
-Just Another URL Shorter.
+Just Another URL Shorter.<br>
+Source code of https://9s.gs
 
 ## Requirements
 
@@ -11,15 +12,23 @@ Just Another URL Shorter.
 
 ## Deploy
 
+### Clone Repository
+
+```
+git clone https://github.com/WooMai/LinkShorter
+```
+
 ### Install Dependencies
 
 ```
 composer install
 ```
 
-### Nginx Rewrite
+### Example Nginx Configuration
 
 ```
+root /path/to/root/dir/public;
+
 location / {
   try_files $uri $uri/ /index.php?$query_string;
 }
