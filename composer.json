@@ -1,6 +1,8 @@
 {
     "name": "woomai/link-shorter",
+    "description": "Just Another URL Shorter.",
     "type": "project",
+    "version": "1.0",
     "require": {
         "php": "^8.0",
         "ext-pdo_mysql": "*",
