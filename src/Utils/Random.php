@@ -29,7 +29,7 @@ class Random
      */
     public static function str(int $len = 16): string
     {
-        $list = str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
+        $list = str_shuffle('abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ123456789');
 
         $factory = new Factory;
         $generator = $factory->getMediumStrengthGenerator();

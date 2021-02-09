@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 
 use App\Models\Redirect;
+use App\Services\Config;
 use App\Services\Redis;
 use App\Utils\Random;
 use Slim\Http\Request;
@@ -49,6 +50,14 @@ class CreateController
                     }
                     $token = Random::str($length);
                 } while (Redirect::where('token', $token)->exists());
+
+                $short_url_length = mb_strlen(Config::get('root_url') ) + 1 + $length;
+                if (mb_strlen($target) <= $short_url_length) {
+                    return $response->withJson(array(
+                        'ok' => false,
+                        'msg' => 'The target URL is not longer than the shortened URL.'
+                    ));
+                }
 
                 $redir = new Redirect();
                 $redir->token = $token;
