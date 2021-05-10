@@ -10,7 +10,7 @@
         "ext-redis": "^5.3",
         "ext-mbstring": "*",
         "slim/slim": "^3.12",
-        "illuminate/database": "^8.26",
+        "illuminate/database": "^8.40",
         "ircmaxell/random-lib": "^1.2"
     },
     "license": "Apache License 2.0",
